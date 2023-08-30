@@ -1,0 +1,173 @@
+[gd_scene load_steps=6 format=3 uid="uid://bstavm1ch5lbe"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_qmelo"]
+
+[sub_resource type="Animation" id="Animation_sshr4"]
+resource_name = "magicpopup"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MagicMenuContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fxyb2"]
+resource_name = "offensepopup"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OffenseMenu:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cmuyr"]
+resource_name = "popup"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AtkMenuContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lrgvr"]
+_data = {
+"magicpopup": SubResource("Animation_sshr4"),
+"offensepopup": SubResource("Animation_fxyb2"),
+"popup": SubResource("Animation_cmuyr")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qmelo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lrgvr")
+}
+
+[node name="AttackMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 454.0
+offset_right = 238.0
+offset_bottom = 504.0
+text = "Attack"
+
+[node name="MagicMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 515.0
+offset_right = 238.0
+offset_bottom = 565.0
+text = "Magic"
+
+[node name="DefendMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 575.0
+offset_right = 238.0
+offset_bottom = 625.0
+text = "Defend"
+
+[node name="MagicMenuContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 259.0
+offset_top = 514.0
+offset_right = 459.0
+offset_bottom = 580.0
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Offense" type="Button" parent="MagicMenuContainer"]
+layout_mode = 2
+text = "Offense"
+
+[node name="Defense" type="Button" parent="MagicMenuContainer"]
+layout_mode = 2
+text = "Defense"
+
+[node name="MagicMenuBack" type="Button" parent="MagicMenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[node name="OffenseMenu" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 471.0
+offset_top = 494.0
+offset_right = 671.0
+offset_bottom = 560.0
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Fire Ball" type="Button" parent="OffenseMenu"]
+layout_mode = 2
+text = "Fire Ball"
+
+[node name="Ice Blast" type="Button" parent="OffenseMenu"]
+layout_mode = 2
+text = "Ice Blast"
+
+[node name="OffenseMenuBack" type="Button" parent="OffenseMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[node name="AtkMenuContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 259.0
+offset_top = 453.0
+offset_right = 459.0
+offset_bottom = 593.0
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Jab" type="Button" parent="AtkMenuContainer"]
+layout_mode = 2
+text = "Jab"
+
+[node name="Kick" type="Button" parent="AtkMenuContainer"]
+layout_mode = 2
+text = "Kick"
+
+[node name="Cross" type="Button" parent="AtkMenuContainer"]
+layout_mode = 2
+text = "Cross"
+
+[node name="AtkMenuBack" type="Button" parent="AtkMenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[connection signal="pressed" from="AttackMenuButton" to="." method="_on_attack_menu_button_pressed"]
+[connection signal="pressed" from="MagicMenuButton" to="." method="_on_magic_menu_button_pressed"]
+[connection signal="pressed" from="MagicMenuContainer/Offense" to="." method="_on_offense_pressed"]
+[connection signal="pressed" from="MagicMenuContainer/MagicMenuBack" to="." method="_on_magic_menu_back_pressed"]
+[connection signal="pressed" from="OffenseMenu/OffenseMenuBack" to="." method="_on_offense_menu_back_pressed"]
+[connection signal="pressed" from="AtkMenuContainer/AtkMenuBack" to="." method="_on_back_pressed"]

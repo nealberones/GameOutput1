@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7i00myewxm74"]
+
+[ext_resource type="PackedScene" uid="uid://bstavm1ch5lbe" path="res://menu.tscn" id="1_fos2e"]
+[ext_resource type="Texture2D" uid="uid://bxt4tcqj7h6gj" path="res://2301.w030.n003.550A.p1.550.jpg" id="1_jd68n"]
+
+[node name="BattleScene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(564, 456)
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_jd68n")
+expand_mode = 1
+
+[node name="Menu" parent="." instance=ExtResource("1_fos2e")]
