@@ -203,12 +203,15 @@ func _on_tesla_shot_pressed():
 func _on_widowmaker_pressed():
 	$widowsfx.play()
 	$AnimationPlayer.play_backwards("collapse")
+	togglemainbuttons()
 
 func _on_reaper_pressed():
 	$reapersfx.play()
 	$AnimationPlayer.play_backwards("collapse")
+	togglemainbuttons()
 
 func _on_sombra_pressed():
 	$sombrasfx.play()
 	$AnimationPlayer.play_backwards("collapse")
+	togglemainbuttons()
 
