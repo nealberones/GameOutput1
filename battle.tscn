@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7i00myewxm74"]
+[gd_scene load_steps=7 format=3 uid="uid://b7i00myewxm74"]
 
+[ext_resource type="Texture2D" uid="uid://daxj7jy6qovfj" path="res://Screenshot 2023-09-03 210823.png" id="1_1chwf"]
 [ext_resource type="PackedScene" uid="uid://bstavm1ch5lbe" path="res://menu.tscn" id="1_fos2e"]
-[ext_resource type="Texture2D" uid="uid://bxt4tcqj7h6gj" path="res://2301.w030.n003.550A.p1.550.jpg" id="1_jd68n"]
 [ext_resource type="Texture2D" uid="uid://b8mrg68dtn0a3" path="res://winston.png" id="3_7hvab"]
+[ext_resource type="Texture2D" uid="uid://dekme6exmxjg0" path="res://repear.png" id="4_p5n30"]
+[ext_resource type="Texture2D" uid="uid://wds6k6snm0qp" path="res://sombra.png" id="5_pv70l"]
+[ext_resource type="Texture2D" uid="uid://o3yobuglanjn" path="res://widow.png" id="6_nxx5q"]
 
 [node name="BattleScene" type="Node2D"]
 
@@ -10,7 +13,7 @@
 custom_minimum_size = Vector2(564, 456)
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_jd68n")
+texture = ExtResource("1_1chwf")
 expand_mode = 1
 
 [node name="Menu" parent="." instance=ExtResource("1_fos2e")]
@@ -24,3 +27,21 @@ offset_bottom = -435.0
 [node name="Sprite2D" type="Sprite2D" parent="Winston"]
 position = Vector2(252, 413)
 texture = ExtResource("3_7hvab")
+
+[node name="Reaper" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Reaper"]
+position = Vector2(706, 349)
+texture = ExtResource("4_p5n30")
+
+[node name="Widow" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Widow"]
+position = Vector2(998, 502)
+texture = ExtResource("5_pv70l")
+
+[node name="Sombra" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sombra"]
+position = Vector2(947, 148)
+texture = ExtResource("6_nxx5q")
