@@ -165,6 +165,7 @@ func _on_single_target_toggled(button_pressed):
 
 func _on_aoe_toggled(button_pressed):
 	toggleaoebuttons()
+	$peanutsfx.play()
 
 func _on_single_target_back_button_pressed():
 	$AnimationPlayer.play_backwards("singletargetpopup")
@@ -174,9 +175,36 @@ func _on_single_target_pressed():
 	$AnimationPlayer.play("singletargetpopup")
 	disabletargettingbuttons()
 
-func _on_attack_confirm_pressed():
-	$AnimationPlayer.play("atktargetpopup")
+func _on_primal_rage_pressed():
+	$AnimationPlayer.play_backwards("offensepopup")
+	$Primalsfx.play()
+	togglemainbuttons()
+	togglemagicbuttons()
+func _on_leap_pressed():
+	$leapsfx.play() 
 
+func _on_defend_menu_button_pressed():
+	$barriersfx.play()
 
-func _on_atkselect_back_button_pressed():
-	$AnimationPlayer.play_backwards("atktargetpopup")
+func _on_tesla_cannon_pressed():
+	$AnimationPlayer.play_backwards("offensepopup")
+	$teslasfx.play()
+	togglemainbuttons()
+	togglemagicbuttons()
+
+func _on_confirm_pressed():
+	$confirmsfx.play()
+	$AnimationPlayer.play_backwards("popup")
+	togglemainbuttons()
+	
+func _on_tesla_shot_pressed():
+	$teslasfx.play()
+
+func _on_widowmaker_pressed():
+	$widowsfx.play()
+
+func _on_reaper_pressed():
+	$reapersfx.play()
+
+func _on_sombra_pressed():
+	$sombrasfx.play()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ebylg0pxfg4h"
+path="res://.godot/imported/enemies detected.mp3-3166e2de5bb12d103a14c4a6b43c7681.mp3str"
+
+[deps]
+
+source_file="res://sfx/enemies detected.mp3"
+dest_files=["res://.godot/imported/enemies detected.mp3-3166e2de5bb12d103a14c4a6b43c7681.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
