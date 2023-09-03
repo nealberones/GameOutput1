@@ -20,6 +20,24 @@ func togglesinglebuttons():
 	get_node("OffenseMenuPanel/OffenseMenu/Primal Rage").disabled = not get_node("OffenseMenuPanel/OffenseMenu/Primal Rage").disabled
 	get_node("OffenseMenuPanel/OffenseMenu/AOE").disabled = not get_node("OffenseMenuPanel/OffenseMenu/AOE").disabled
 
+func disabletargettingbuttons():
+	get_node("OffenseMenuPanel/OffenseMenu/Tesla Cannon").disabled = true
+	get_node("OffenseMenuPanel/OffenseMenu/Primal Rage").disabled =true
+	get_node("OffenseMenuPanel/OffenseMenu/AOE").disabled = true
+	get_node("OffenseMenuPanel/OffenseMenu/Leap").disabled = true
+	get_node("OffenseMenuPanel/OffenseMenu/Tesla Shot").disabled = true
+	get_node("OffenseMenuPanel/OffenseMenu/Single Target").disabled = true
+	get_node("OffenseMenuPanel/OffenseMenu/OffenseMenuBack").disabled = true
+
+func enabletargettingbuttons():
+	get_node("OffenseMenuPanel/OffenseMenu/Tesla Cannon").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Primal Rage").disabled =false
+	get_node("OffenseMenuPanel/OffenseMenu/AOE").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Leap").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Tesla Shot").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Single Target").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/OffenseMenuBack").disabled = false
+
 func _on_attack_menu_button_pressed():
 	$AnimationPlayer.play("popup")
 	$AtkMenuPanel/AtkMenuContainer/Confirm.disabled = true
@@ -153,8 +171,8 @@ func _on_aoe_toggled(button_pressed):
 
 func _on_single_target_back_button_pressed():
 	$AnimationPlayer.play_backwards("singletargetpopup")
-	togglesinglebuttons()
-
+	enabletargettingbuttons()
 
 func _on_single_target_pressed():
 	$AnimationPlayer.play("singletargetpopup")
+	disabletargettingbuttons()
