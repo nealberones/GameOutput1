@@ -22,6 +22,7 @@ func togglesinglebuttons():
 
 func _on_attack_menu_button_pressed():
 	$AnimationPlayer.play("popup")
+	$AtkMenuContainer/Confirm.disabled = true
 	togglemainbuttons()
 
 func _on_back_pressed():
@@ -51,6 +52,15 @@ func _on_axe_kick_toggled(button_pressed):
 		$AtkMenuContainer/Cross.disabled = true
 		$AtkMenuContainer/Grapple.disabled = true
 		$AtkMenuContainer/Confirm.disabled = false
+	else:
+		if get_node("AtkMenuContainer/Roundhouse Kick").button_pressed == true:
+			pass
+		else:
+			$AtkMenuContainer/Jab.disabled = false
+			$AtkMenuContainer/Straight.disabled = false
+			$AtkMenuContainer/Cross.disabled = false
+			$AtkMenuContainer/Grapple.disabled = false
+			$AtkMenuContainer/Confirm.disabled = true
 
 func _on_roundhouse_kick_toggled(button_pressed):
 	if button_pressed==true:
@@ -59,43 +69,78 @@ func _on_roundhouse_kick_toggled(button_pressed):
 		$AtkMenuContainer/Cross.disabled = true
 		$AtkMenuContainer/Grapple.disabled = true
 		$AtkMenuContainer/Confirm.disabled = false
-
-func _on_reset_pressed():
-	$AtkMenuContainer/Jab.disabled = false
-	$AtkMenuContainer/Straight.disabled = false
-	$AtkMenuContainer/Cross.disabled = false
-	$AtkMenuContainer/Grapple.disabled = false
-	$"AtkMenuContainer/Roundhouse Kick".disabled = false
-	$"AtkMenuContainer/Axe Kick".disabled = false
-	$AtkMenuContainer/Confirm.disabled = true
-
+	else:
+		if get_node("AtkMenuContainer/Axe Kick").button_pressed == true:
+			pass
+		else:
+			$AtkMenuContainer/Jab.disabled = false
+			$AtkMenuContainer/Straight.disabled = false
+			$AtkMenuContainer/Cross.disabled = false
+			$AtkMenuContainer/Grapple.disabled = false
+			$AtkMenuContainer/Confirm.disabled = true
 
 func _on_straight_toggled(button_pressed):
-	$"AtkMenuContainer/Roundhouse Kick".disabled = true
-	$"AtkMenuContainer/Axe Kick".disabled = true
-	$AtkMenuContainer/Grapple.disabled = true
-	$AtkMenuContainer/Confirm.disabled = false
+	if button_pressed:
+		$"AtkMenuContainer/Roundhouse Kick".disabled = true
+		$"AtkMenuContainer/Axe Kick".disabled = true
+		$AtkMenuContainer/Grapple.disabled = true
+		$AtkMenuContainer/Confirm.disabled = false
+	else:
+		if get_node("AtkMenuContainer/Jab").button_pressed or get_node("AtkMenuContainer/Cross").button_pressed == true:
+			pass
+		else:
+			$"AtkMenuContainer/Roundhouse Kick".disabled = false
+			$"AtkMenuContainer/Axe Kick".disabled = false
+			$AtkMenuContainer/Grapple.disabled = false
+			$AtkMenuContainer/Confirm.disabled = true
+		
 
 func _on_jab_toggled(button_pressed):
-	$"AtkMenuContainer/Roundhouse Kick".disabled = true
-	$"AtkMenuContainer/Axe Kick".disabled = true
-	$AtkMenuContainer/Grapple.disabled = true
-	$AtkMenuContainer/Confirm.disabled = false
+	if button_pressed:
+		$"AtkMenuContainer/Roundhouse Kick".disabled = true
+		$"AtkMenuContainer/Axe Kick".disabled = true
+		$AtkMenuContainer/Grapple.disabled = true
+		$AtkMenuContainer/Confirm.disabled = false
+	else:
+		if get_node("AtkMenuContainer/Straight").button_pressed or get_node("AtkMenuContainer/Cross").button_pressed == true:
+			pass
+		else:
+			$"AtkMenuContainer/Roundhouse Kick".disabled = false
+			$"AtkMenuContainer/Axe Kick".disabled = false
+			$AtkMenuContainer/Grapple.disabled = false
+			$AtkMenuContainer/Confirm.disabled = true
 
 func _on_cross_toggled(button_pressed):
-	$"AtkMenuContainer/Roundhouse Kick".disabled = true
-	$"AtkMenuContainer/Axe Kick".disabled = true
-	$AtkMenuContainer/Grapple.disabled = true
-	$AtkMenuContainer/Confirm.disabled = false
+	if button_pressed:
+		$"AtkMenuContainer/Roundhouse Kick".disabled = true
+		$"AtkMenuContainer/Axe Kick".disabled = true
+		$AtkMenuContainer/Grapple.disabled = true
+		$AtkMenuContainer/Confirm.disabled = false
+	else:
+		if get_node("AtkMenuContainer/Straight").button_pressed or get_node("AtkMenuContainer/Jab").button_pressed == true:
+			pass
+		else:
+			$"AtkMenuContainer/Roundhouse Kick".disabled = false
+			$"AtkMenuContainer/Axe Kick".disabled = false
+			$AtkMenuContainer/Grapple.disabled = false
+			$AtkMenuContainer/Confirm.disabled = true
 	
 
 func _on_grapple_toggled(button_pressed):
-	$"AtkMenuContainer/Roundhouse Kick".disabled = true
-	$"AtkMenuContainer/Axe Kick".disabled = true
-	$AtkMenuContainer/Jab.disabled = false
-	$AtkMenuContainer/Straight.disabled = false
-	$AtkMenuContainer/Cross.disabled = false
-	$AtkMenuContainer/Confirm.disabled = false
+	if button_pressed:
+		$"AtkMenuContainer/Roundhouse Kick".disabled = true
+		$"AtkMenuContainer/Axe Kick".disabled = true
+		$AtkMenuContainer/Jab.disabled = true
+		$AtkMenuContainer/Straight.disabled = true
+		$AtkMenuContainer/Cross.disabled = true
+		$AtkMenuContainer/Confirm.disabled = false
+	else:
+		$"AtkMenuContainer/Roundhouse Kick".disabled = false
+		$"AtkMenuContainer/Axe Kick".disabled = false
+		$AtkMenuContainer/Jab.disabled = false
+		$AtkMenuContainer/Straight.disabled = false
+		$AtkMenuContainer/Cross.disabled = false
+		$AtkMenuContainer/Confirm.disabled = true
 
 
 func _on_single_target_toggled(button_pressed):

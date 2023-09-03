@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7i00myewxm74"]
+[gd_scene load_steps=4 format=3 uid="uid://b7i00myewxm74"]
 
 [ext_resource type="PackedScene" uid="uid://bstavm1ch5lbe" path="res://menu.tscn" id="1_fos2e"]
 [ext_resource type="Texture2D" uid="uid://bxt4tcqj7h6gj" path="res://2301.w030.n003.550A.p1.550.jpg" id="1_jd68n"]
+[ext_resource type="Texture2D" uid="uid://b8mrg68dtn0a3" path="res://winston.png" id="3_7hvab"]
 
 [node name="BattleScene" type="Node2D"]
 
@@ -21,3 +22,5 @@ offset_bottom = -435.0
 [node name="Winston" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Winston"]
+position = Vector2(252, 413)
+texture = ExtResource("3_7hvab")

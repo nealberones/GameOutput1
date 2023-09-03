@@ -198,10 +198,6 @@ layout_mode = 2
 toggle_mode = true
 text = "Grapple"
 
-[node name="Reset" type="Button" parent="AtkMenuContainer"]
-layout_mode = 2
-text = "Reset"
-
 [node name="Confirm" type="Button" parent="AtkMenuContainer"]
 layout_mode = 2
 text = "Confirm"
@@ -224,5 +220,4 @@ text = "Back"
 [connection signal="toggled" from="AtkMenuContainer/Axe Kick" to="." method="_on_axe_kick_toggled"]
 [connection signal="toggled" from="AtkMenuContainer/Cross" to="." method="_on_cross_toggled"]
 [connection signal="toggled" from="AtkMenuContainer/Grapple" to="." method="_on_grapple_toggled"]
-[connection signal="pressed" from="AtkMenuContainer/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="AtkMenuContainer/AtkMenuBack" to="." method="_on_back_pressed"]
