@@ -13,3 +13,11 @@ texture = ExtResource("1_jd68n")
 expand_mode = 1
 
 [node name="Menu" parent="." instance=ExtResource("1_fos2e")]
+offset_left = -24.0
+offset_top = -435.0
+offset_right = -24.0
+offset_bottom = -435.0
+
+[node name="Winston" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Winston"]

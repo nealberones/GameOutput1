@@ -85,7 +85,7 @@ offset_left = 38.0
 offset_top = 515.0
 offset_right = 238.0
 offset_bottom = 565.0
-text = "Magic"
+text = "Abilities"
 
 [node name="DefendMenuButton" type="Button" parent="."]
 layout_mode = 0
@@ -126,13 +126,33 @@ offset_right = 671.0
 offset_bottom = 560.0
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Fire Ball" type="Button" parent="OffenseMenu"]
+[node name="Single Target" type="Button" parent="OffenseMenu"]
 layout_mode = 2
-text = "Fire Ball"
+toggle_mode = true
+text = "Single Target"
 
-[node name="Ice Blast" type="Button" parent="OffenseMenu"]
+[node name="AOE" type="Button" parent="OffenseMenu"]
 layout_mode = 2
-text = "Ice Blast"
+toggle_mode = true
+text = "AOE"
+
+[node name="Tesla Cannon" type="Button" parent="OffenseMenu"]
+layout_mode = 2
+text = "Tesla Cannon"
+
+[node name="Primal Rage" type="Button" parent="OffenseMenu"]
+layout_mode = 2
+text = "Primal Rage"
+
+[node name="Leap" type="Button" parent="OffenseMenu"]
+layout_mode = 2
+toggle_mode = true
+text = "Leap"
+
+[node name="Tesla Shot" type="Button" parent="OffenseMenu"]
+layout_mode = 2
+toggle_mode = true
+text = "Tesla Shot"
 
 [node name="OffenseMenuBack" type="Button" parent="OffenseMenu"]
 layout_mode = 2
@@ -150,15 +170,41 @@ scale = Vector2(1e-05, 1e-05)
 
 [node name="Jab" type="Button" parent="AtkMenuContainer"]
 layout_mode = 2
+toggle_mode = true
 text = "Jab"
 
-[node name="Kick" type="Button" parent="AtkMenuContainer"]
+[node name="Straight" type="Button" parent="AtkMenuContainer"]
 layout_mode = 2
-text = "Kick"
+toggle_mode = true
+text = "Straight"
+
+[node name="Roundhouse Kick" type="Button" parent="AtkMenuContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Roundhouse Kick"
+
+[node name="Axe Kick" type="Button" parent="AtkMenuContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Axe Kick"
 
 [node name="Cross" type="Button" parent="AtkMenuContainer"]
 layout_mode = 2
+toggle_mode = true
 text = "Cross"
+
+[node name="Grapple" type="Button" parent="AtkMenuContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Grapple"
+
+[node name="Reset" type="Button" parent="AtkMenuContainer"]
+layout_mode = 2
+text = "Reset"
+
+[node name="Confirm" type="Button" parent="AtkMenuContainer"]
+layout_mode = 2
+text = "Confirm"
 
 [node name="AtkMenuBack" type="Button" parent="AtkMenuContainer"]
 layout_mode = 2
@@ -169,5 +215,14 @@ text = "Back"
 [connection signal="pressed" from="MagicMenuButton" to="." method="_on_magic_menu_button_pressed"]
 [connection signal="pressed" from="MagicMenuContainer/Offense" to="." method="_on_offense_pressed"]
 [connection signal="pressed" from="MagicMenuContainer/MagicMenuBack" to="." method="_on_magic_menu_back_pressed"]
+[connection signal="toggled" from="OffenseMenu/Single Target" to="." method="_on_single_target_toggled"]
+[connection signal="toggled" from="OffenseMenu/AOE" to="." method="_on_aoe_toggled"]
 [connection signal="pressed" from="OffenseMenu/OffenseMenuBack" to="." method="_on_offense_menu_back_pressed"]
+[connection signal="toggled" from="AtkMenuContainer/Jab" to="." method="_on_jab_toggled"]
+[connection signal="toggled" from="AtkMenuContainer/Straight" to="." method="_on_jab_toggled"]
+[connection signal="toggled" from="AtkMenuContainer/Roundhouse Kick" to="." method="_on_roundhouse_kick_toggled"]
+[connection signal="toggled" from="AtkMenuContainer/Axe Kick" to="." method="_on_axe_kick_toggled"]
+[connection signal="toggled" from="AtkMenuContainer/Cross" to="." method="_on_cross_toggled"]
+[connection signal="toggled" from="AtkMenuContainer/Grapple" to="." method="_on_grapple_toggled"]
+[connection signal="pressed" from="AtkMenuContainer/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="AtkMenuContainer/AtkMenuBack" to="." method="_on_back_pressed"]
