@@ -27,7 +27,7 @@ texture = ExtResource("4_p5n30")
 [node name="Winston" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Winston"]
-position = Vector2(252, 413)
+position = Vector2(251, 478)
 texture = ExtResource("3_7hvab")
 
 [node name="Widow" type="CharacterBody2D" parent="."]
