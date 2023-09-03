@@ -160,14 +160,11 @@ func _on_grapple_toggled(button_pressed):
 		$AtkMenuPanel/AtkMenuContainer/Cross.disabled = false
 		$AtkMenuPanel/AtkMenuContainer/Confirm.disabled = true
 
-
 func _on_single_target_toggled(button_pressed):
 	togglesinglebuttons()
 
-
 func _on_aoe_toggled(button_pressed):
 	toggleaoebuttons()
-
 
 func _on_single_target_back_button_pressed():
 	$AnimationPlayer.play_backwards("singletargetpopup")
@@ -176,3 +173,10 @@ func _on_single_target_back_button_pressed():
 func _on_single_target_pressed():
 	$AnimationPlayer.play("singletargetpopup")
 	disabletargettingbuttons()
+
+func _on_attack_confirm_pressed():
+	$AnimationPlayer.play("atktargetpopup")
+
+
+func _on_atkselect_back_button_pressed():
+	$AnimationPlayer.play_backwards("atktargetpopup")
