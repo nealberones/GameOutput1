@@ -21,7 +21,7 @@ expand_mode = 1
 [node name="Reaper" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Reaper"]
-position = Vector2(706, 349)
+position = Vector2(806, 327)
 texture = ExtResource("4_p5n30")
 
 [node name="Winston" type="CharacterBody2D" parent="."]
@@ -33,11 +33,11 @@ texture = ExtResource("3_7hvab")
 [node name="Widow" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Widow"]
-position = Vector2(998, 502)
+position = Vector2(1024, 497)
 texture = ExtResource("5_pv70l")
 
 [node name="Sombra" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Sombra"]
-position = Vector2(947, 148)
+position = Vector2(966, 152)
 texture = ExtResource("6_nxx5q")
