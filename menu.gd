@@ -38,6 +38,27 @@ func enabletargettingbuttons():
 	get_node("OffenseMenuPanel/OffenseMenu/Single Target").disabled = false
 	get_node("OffenseMenuPanel/OffenseMenu/OffenseMenuBack").disabled = false
 
+func enableallbuttons():
+	get_node("AttackMenuButton").disabled = false
+	get_node("MagicMenuButton").disabled = false
+	get_node("DefendMenuButton").disabled = false
+	get_node("MagicMenuPanel/MagicMenuContainer/Offense").disabled = false
+	get_node("MagicMenuPanel/MagicMenuContainer/Defense").disabled = false
+	get_node("MagicMenuPanel/MagicMenuContainer/MagicMenuBack").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Leap").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Tesla Shot").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Single Target").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Tesla Cannon").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Primal Rage").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/AOE").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Tesla Cannon").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Primal Rage").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/AOE").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Leap").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Tesla Shot").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/Single Target").disabled = false
+	get_node("OffenseMenuPanel/OffenseMenu/OffenseMenuBack").disabled = false
+
 func _on_attack_menu_button_pressed():
 	$AnimationPlayer.play("popup")
 	$AtkMenuPanel/AtkMenuContainer/Confirm.disabled = true
@@ -196,28 +217,26 @@ func _on_confirm_pressed():
 	$confirmsfx.play()
 	$AnimationPlayer.play_backwards("popup")
 	togglemainbuttons()
-	
+	enableallbuttons()
+
 func _on_tesla_shot_pressed():
 	$teslasfx.play()
 
 func _on_widowmaker_pressed():
 	$widowsfx.play()
+	enableallbuttons()
 	$AnimationPlayer.play_backwards("collapse")
-	togglemainbuttons()
-	togglemagicbuttons()
-	enabletargettingbuttons()
+
 
 func _on_reaper_pressed():
 	$reapersfx.play()
+	enableallbuttons()
 	$AnimationPlayer.play_backwards("collapse")
-	togglemainbuttons()
-	togglemagicbuttons()
-	enabletargettingbuttons()
+
 
 func _on_sombra_pressed():
 	$sombrasfx.play()
+	enableallbuttons()
 	$AnimationPlayer.play_backwards("collapse")
-	togglemainbuttons()
-	togglemagicbuttons()
-	enabletargettingbuttons()
+
 
