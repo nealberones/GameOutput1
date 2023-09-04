@@ -176,10 +176,12 @@ func _on_single_target_pressed():
 	disabletargettingbuttons()
 
 func _on_primal_rage_pressed():
-	$AnimationPlayer.play_backwards("offensepopup")
+	$AnimationPlayer.play_backwards("collapse")
 	$Primalsfx.play()
 	togglemainbuttons()
 	togglemagicbuttons()
+	
+	
 func _on_leap_pressed():
 	$leapsfx.play() 
 
@@ -187,7 +189,7 @@ func _on_defend_menu_button_pressed():
 	$barriersfx.play()
 
 func _on_tesla_cannon_pressed():
-	$AnimationPlayer.play_backwards("offensepopup")
+	$AnimationPlayer.play_backwards("collapse")
 	$teslasfx.play()
 	togglemainbuttons()
 	togglemagicbuttons()
